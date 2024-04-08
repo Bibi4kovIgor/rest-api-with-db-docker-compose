@@ -46,6 +46,11 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
+                <finalName>rest-api-with-db</finalName>
+                <outputDirectory>${project.basedir}/docker</outputDirectory>
+                <profiles>
+                    <profile>prod</profile>
+                </profiles>
 					<image>
 						<builder>paketobuildpacks/builder-jammy-base:latest</builder>
 					</image>

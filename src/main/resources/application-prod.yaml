@@ -1,0 +1,17 @@
+server:
+  port: 8084
+
+spring:
+  datasource:
+    url: jdbc:postgresql://server:5432/test
+    username: admin
+    password: admin
+
+  flyway:
+    url: jdbc:postgresql://server:5432/test?ssl=false
+    user: admin
+    password: admin
+    schemas:
+      - "public"
+    locations:
+      - classpath:/migrations/

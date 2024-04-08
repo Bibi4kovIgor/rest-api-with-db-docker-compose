@@ -1,0 +1,12 @@
+FROM amazoncorretto:17-alpine3.12
+EXPOSE 8083
+RUN addgroup -S spring-group \
+    && adduser -S spring -G spring-group
+USER spring:spring-group
+ENV JAR_FILE=demo.jar
+ENV WORKDIR_PATH=/app
+WORKDIR ${WORKDIR_PATH}
+COPY ${JAR_FILE} ${JAR_FILE}
+RUN pwd \
+    && ls
+ENTRYPOINT java -jar ${WORKDIR_PATH}/${JAR_FILE}

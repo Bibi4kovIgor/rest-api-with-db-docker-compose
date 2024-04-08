@@ -1,0 +1,19 @@
+server:
+  address: 0.0.0.0
+
+logging:
+  level:
+    sql: trace
+
+spring:
+  profiles:
+    active:
+      - prod
+
+  jooq:
+    sql-dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
