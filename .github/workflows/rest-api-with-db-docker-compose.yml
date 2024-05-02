@@ -5,8 +5,7 @@
 #---------------------------------------------------------------------
 name: ci
 env:
-  APP_WRITE_APPLICATION_NAME: rest-api-with-database
-
+  APP_WRITE_APPLICATION_NAME: web-site
 
 on: 
   push:
@@ -19,7 +18,7 @@ jobs:
        
        steps:
          - name: Git clone our repository
-           uses: actions/checkout@v1
+           uses: actions/checkout@v2
             
          - name: Create ZIP deployment package
            run : zip -r ${{ env.DEPLOY_PACKAGE_NAME }} ./  -x  *.git*
